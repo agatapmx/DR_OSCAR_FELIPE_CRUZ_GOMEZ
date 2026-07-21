@@ -3,28 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Oscar Felipe Cruz Gómez </title>
+<title>Dr Oscar Felipe Cruz Gómez</title>
 
-<!-- Google Fonts:
-     - Cormorant Garamond (serif, elegante) -> texto del sello y dirección
-     - Poppins (sans-serif redondeada) -> botones de enlace
-     - Caveat (manuscrita) -> frase decorativa -->
+<!-- Google Fonts: Montserrat (sans-serif limpia y moderna) para todo el documento -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
   :root{
-    /* ---- Paleta de colores (ajusta aquí si tu marca usa otros tonos) ---- */
-    --cream: #f3ead9;          /* fondo del sello y tarjeta */
-    --cream-soft: #f0e6d4;
-    --olive: #55523c;          /* color de los botones */
-    --olive-dark: #45422f;     /* hover de los botones */
-    --ink: #333333;
-    --ink-soft: #333333;
-    --card-bg: rgba(243, 234, 217, 0.86); /* tarjeta translúcida sobre la foto */
-    --shadow: rgba(40, 35, 20, 0.18);
+    /* ---- Paleta de colores Angiomedyc ---- */
+    --card-bg-color: #FFFFFF;      /* fondo blanco puro, apariencia clínica */
+    --seal-bg: #FFFFFF;            /* fondo del óvalo del logo, blanco puro */
+    --btn-bg: #407BCE;             /* azul del logotipo Angiomedyc */
+    --btn-hover: #C42026;          /* rojo del logotipo Angiomedyc */
+    --btn-text: #FFFFFF;
+    --ink: #4A4A4A;                /* gris oscuro para texto general */
+    --card-bg: rgba(255, 255, 255, 0.92); /* tarjeta translúcida sobre la foto */
+    --shadow: rgba(20, 30, 45, 0.20);
   }
 
   *{
@@ -38,7 +35,7 @@
   }
 
   body{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', 'Helvetica', 'Roboto', sans-serif;
     color: var(--ink);
     min-height: 100vh;
     display: flex;
@@ -46,7 +43,7 @@
     justify-content: center;
     padding: 48px 16px;
 
-    background: #1a1608;
+    background: #0d1520;
   }
 
   /* ============ IMAGEN DE FONDO ============ */
@@ -60,13 +57,15 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
   }
 
   .bg-overlay{
     position: absolute;
     inset: 0;
-    background: rgba(30, 24, 12, 0.25);
+    /* Overlay oscuro en tonos azul/gris para que la tarjeta blanca resalte */
+    background: linear-gradient(180deg, rgba(10, 20, 35, 0.55), rgba(10, 20, 35, 0.65));
   }
 
   /* ============ TARJETA PRINCIPAL ============ */
@@ -97,9 +96,12 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: var(--cream);
+    background: var(--seal-bg);
     box-shadow: 0 10px 25px var(--shadow);
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .seal-shape img{
@@ -124,10 +126,10 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background: #387C8A;
-    color: #ffffff;
+    background: var(--btn-bg);
+    color: var(--btn-text);
     text-decoration: none;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 16px;
     letter-spacing: 0.2px;
@@ -144,7 +146,7 @@
 
   .links a:hover,
   .links a:focus-visible{
-    background: #2d6875;
+    background: var(--btn-hover);
     transform: translateY(-2px) scale(1.015);
     box-shadow: 0 10px 20px var(--shadow);
   }
@@ -158,25 +160,24 @@
     outline-offset: 3px;
   }
 
-  /* ============ FRASE MANUSCRITA ============ */
-  .tagline{
-    font-family: 'Caveat', cursive;
-    font-weight: 600;
-    font-size: 26px;
-    color: var(--ink-soft);
-    margin: 6px 0 26px;
-  }
-
   /* ============ DATOS DE CONTACTO ============ */
   .contact{
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
     line-height: 1.7;
     color: var(--ink);
   }
 
   .contact p{
     margin: 0;
+  }
+
+  .contact p.name{
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 4px;
+    color: var(--ink);
   }
 
   @media (max-width: 360px){
@@ -199,43 +200,43 @@
 <body>
 
   <!-- ============ IMAGEN DE FONDO ============
-       Reemplaza la URL de abajo por el link de internet de tu imagen -->
+       Placeholder de Unsplash: entorno clínico/médico desenfocado en tonos azul-gris.
+       Puedes sustituir la URL por tu propia imagen si lo prefieres. -->
   <div class="bg-wrapper">
-    <img src="OSCAR fondo.png" alt="Fondo de Dr. Oscar Felipe Cruz Gómez">
+    <img src="OSCAR fondo.png" alt="Fondo Dr. Oscar Felipe Cruz Gómez">
     <div class="bg-overlay"></div>
   </div>
 
   <main class="card">
 
     <!-- ============ SELLO / LOGO ============
-         Pon tu archivo de logo (por ejemplo "logo.png" o "logo.jpg")
-         en esta misma carpeta, junto a este index.html, y cambia el
-         "src" de abajo por su nombre de archivo. Idealmente cuadrado
-         o vertical, se recorta en forma circular automáticamente. -->
+         Fondo del óvalo en blanco puro para que el logo de Angiomedyc resalte. -->
     <div class="seal">
       <div class="seal-shape">
-        <img src="OSCAR logo.jpg" alt="Logo Dr. Oscar Felipe Cruz Gómez">
+        <!-- Insertar imagen del logo aquí -->
+        <img src="OSCAR logo.png" alt="Logo Dr. Oscar Felipe Cruz Gómez">
       </div>
     </div>
 
     <!-- ============ ENLACES ============
-         Reemplaza cada href="#" por la URL real de cada sección. -->
+         Reemplaza cada href por la URL real de cada sección. -->
     <ul class="links">
-      <li><a href="https://search.google.com/local/writereview?placeid=ChIJ_cNfNeOvKIQRkrge2UbY6W0" target="_blank" rel="noopener"><i class="fa-brands fa-google"></i> Google Reviews</a></li>
-      <li><a href="https://www.instagram.com/lumont.clinic/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
-      <li><a href="https://wa.me/523318857875" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Contacto</a></li>
+      <li><a href="https://search.google.com/local/writereview?placeid=ChIJ8Yd-DQCvKIQRWvxTqMtm8As" target="_blank" rel="noopener"><i class="fa-brands fa-google"></i> Google Reviews</a></li>
+      <li><a href="https://www.instagram.com/angiomedyc/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+      <li><a href="https://wa.me/523336276897" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Contacto</a></li>
     </ul>
-
-    <p class="tagline">Angiologia y Cirugia Vascular </p>
 
     <!-- ============ DATOS DE CONTACTO ============
          Cambia dirección, teléfono y usuario de redes por los reales. -->
     <div class="contact">
-      <p>Av. Bethoven 5042, La Estancia, Zapopan, 45030 Guadalajara, Jal.</p>
-      <p>(52) 33 1885 7875 | @lumont.clinic</p>
+      <p class="name">Angiologo Dr. Oscar F.Cruz Gómez</p>
+      <p>Centro Avanzado de Heridas y Pie Diabético</p>
+      <p>Del Tule 792 A, Puertas del Tule, 45117 Zapopan, Jal.</p>
+      <p>(52) 3336276897 | @angiomedyc</p>
     </div>
 
   </main>
 
 </body>
 </html>
+
